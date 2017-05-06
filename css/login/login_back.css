@@ -1,12 +1,14 @@
 html, body {
     height: 85%;
 }
+
 body {
     background-image: url("../../img/login_back.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*媒体查询，修改大小*/
 @media (max-height: 1000px) {
     .content {
         width: 300px;
@@ -19,7 +21,8 @@ body {
         transform-origin: 50% 50% -150px;
     }
 }
-@media(max-width: 800px){
+
+@media (max-width: 800px) {
     .content {
         width: 270px;
         height: 495px;
@@ -31,6 +34,7 @@ body {
         transform-origin: 50% 50% -150px;
     }
 }
+
 @media (max-width: 500px) {
     .content {
         width: 240px;
@@ -56,6 +60,7 @@ body {
         transform-origin: 50% 50% -150px;
     }
 }
+
 @media (max-height: 520px) {
     .content {
         width: 240px;
@@ -68,6 +73,7 @@ body {
         transform-origin: 50% 50% -150px;
     }
 }
+
 @media (max-height: 470px) {
     .content {
         width: 210px;
@@ -80,7 +86,7 @@ body {
         transform-origin: 50% 50% -150px;
     }
 }
-
+/*注意，要实现3D翻转，需要指定绝对位置，然后将几张图片都叠在一起，之后再进行相应的翻转和移动*/
 .login {
     transform: translateZ(0px) rotate(0);
     position: absolute;
@@ -232,12 +238,15 @@ input.input_password {
     color: white;
     text-decoration: none;
 }
+
 input {
     outline: none;
 }
+
 button {
     outline: none;
 }
+
 button:hover {
     cursor: pointer;
 }

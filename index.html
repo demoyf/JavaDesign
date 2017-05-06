@@ -24,39 +24,47 @@
     </script>
     <style>
         .register_page {
-            transform:  translateX(50%) translateZ(-150px) rotateY(90deg);
+            transform: translateX(50%) translateZ(-150px) rotateY(90deg);
             width: 100%;
             height: 100%;
-            background: -webkit-linear-gradient(top,rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(top, rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(top, rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
-            background: linear-gradient(top,rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+            background: -webkit-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
             font-size: 20px;
             position: absolute;
             left: 0%;
             top: 0%;
         }
+
+        /* transform是将当前元素进行一定的位移和翻转，将它们存放到指定的长方体的位置。
+        比如：左侧的页面，先往x的反方向移动一半的位置，之后，将z轴移动到不让他出头，之后就将它翻转90度，
+        注意，x和y就可以根据元素的百分比移动，而z不可以。
+        /注意，这些都是根据指定的翻转轴进行翻转的。记得xyz轴的位置即可。
+        逆时针是负数，切记。
+         */
         .enter_password {
             transform: translateZ(-300px) rotateY(180deg);
             width: 100%;
             height: 100%;
-            background: -webkit-linear-gradient(top,rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(top, rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(top, rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
-            background: linear-gradient(top, rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+            background: -webkit-linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
             font-size: 20px;
             position: absolute;
             left: 0%;
             top: 0%;
         }
+
         .forget_password {
             transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
             width: 100%;
             height: 100%;
-            background: -webkit-linear-gradient(top, rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(top,  rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(top,  rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
-            background: linear-gradient(top,  rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+            background: -webkit-linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
             font-size: 20px;
             position: absolute;
             left: 0%;
@@ -66,11 +74,9 @@
     <link rel="stylesheet" href="css/login/login_back.css">
 </head>
 <body>
+<!--顶级的content是用来充当3D旋转的容器-->
 <div class="content">
-    <div class="enter_password">
-        <p>12345679</p>
-        <a href="#" class="second">next</a>
-    </div>
+
     <div class="login">
         <div class="check_mark">
             <div class="left_mark">
@@ -80,6 +86,7 @@
         </div>
         <div class="login_form">
             <div class="login_username">
+                <!--svg就很溜-->
                 <svg class="login_icon" viewBox="0 0 20 20">
                     <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
                 </svg>
@@ -99,10 +106,17 @@
             </div>
         </div>
     </div>
+    <!--右侧的第二个页面-->
     <div class="register_page">
         <p>12345679</p>
         <a href="#" class="next_step">next</a>
     </div>
+    <!--第三个页面-->
+    <div class="enter_password">
+        <p>12345679</p>
+        <a href="#" class="second">next</a>
+    </div>
+    <!--第4个页面-->
     <div class="forget_password">
         <p>12345679</p>
         <a href="#" class="third">next</a>
