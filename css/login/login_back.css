@@ -1,36 +1,110 @@
 html, body {
     height: 85%;
 }
-
 body {
-    background-image: url("../../img/login_background.jpg");
+    background-image: url("../../img/login_back.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
+@media (max-height: 1000px) {
+    .content {
+        width: 300px;
+        height: 550px;
+        left: 40%;
+        top: 15%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: 50% 50% -150px;
+    }
+}
+@media(max-width: 800px){
+    .content {
+        width: 270px;
+        height: 495px;
+        left: 40%;
+        top: 5%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: 50% 50% -150px;
+    }
+}
+@media (max-width: 500px) {
+    .content {
+        width: 240px;
+        height: 440px;
+        left: 40%;
+        top: 5%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: 50% 50% -150px;
+    }
+}
+
+@media (max-height: 650px) {
+    .content {
+        width: 270px;
+        height: 495px;
+        left: 40%;
+        top: 5%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: 50% 50% -150px;
+    }
+}
+@media (max-height: 520px) {
+    .content {
+        width: 240px;
+        height: 440px;
+        left: 40%;
+        top: 5%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: 50% 50% -150px;
+    }
+}
+@media (max-height: 470px) {
+    .content {
+        width: 210px;
+        height: 385px;
+        left: 40%;
+        top: 5%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        transform-origin: 50% 50% -150px;
+    }
+}
 
 .login {
-    width: 19.5%;
-    height: 90%;
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 9%;
+    transform: translateZ(0px) rotate(0);
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
     background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
     background: linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+    z-index: 50;
 }
 
 .check_mark {
-    width: 20%;
-    height: 30%;
+    width: 100%;
+    height: 50%;
     position: absolute;
 }
 
 .left_mark {
     position: absolute;
-    width: 20%;
-    height: 12%;
+    width: 22%;
+    height: 10%;
     background: -webkit-linear-gradient(left, white, rgba(12, 6, 6, 0.05)); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(left, white, rgba(12, 6, 6, 0.05)); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(left, white, rgba(12, 6, 6, 0.05)); /* Firefox 3.6 - 15 */
@@ -43,7 +117,7 @@ body {
 .right_mark {
     position: absolute;
     width: 50%;
-    height: 12%;
+    height: 10%;
     background-color: white;
     left: 33%;
     top: 45%;
@@ -51,7 +125,7 @@ body {
 }
 
 .login_form {
-    position: relative;
+    position: absolute;
     top: 50%;
     width: 80%;
     height: 50%;

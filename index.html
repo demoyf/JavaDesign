@@ -3,37 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <title>C2C平台</title>
-    <script>
+    <script src="js/jquery-1.3.2.min.js">
     </script>
+    <script>
+        $(function () {
+//            !!!!!旋转操作无论如何根据都是开始位置！！！
+            $('.flip_to_register').click(function () {
+                $('.content').css({transform: "rotateY(-90deg)"});
+            });
+            $('.next_step').click(function () {
+                $('.content').css({transform: "rotateY(-180deg)"});
+            });
+            $('.second').click(function () {
+                $('.content').css({transform: "rotateY(-270deg)"});
+            });
+            $('.third').click(function () {
+                $('.content').css({transform: "rotateY(-360deg)"});
+            });
+        });
+    </script>
+    <style>
+        .register_page {
+            transform:  translateX(50%) translateZ(-150px) rotateY(90deg);
+            width: 100%;
+            height: 100%;
+            background: -webkit-linear-gradient(top,rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top, rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top, rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(top,rgba(186,87,239,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+            font-size: 20px;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+        }
+        .enter_password {
+            transform: translateZ(-300px) rotateY(180deg);
+            width: 100%;
+            height: 100%;
+            background: -webkit-linear-gradient(top,rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top, rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top, rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(top, rgba(142,213,220,0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+            font-size: 20px;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+        }
+        .forget_password {
+            transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
+            width: 100%;
+            height: 100%;
+            background: -webkit-linear-gradient(top, rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top,  rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top,  rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(top,  rgba(171,239,196,0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
+            font-size: 20px;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+        }
+    </style>
     <link rel="stylesheet" href="css/login/login_back.css">
 </head>
 <body>
-<div class="login">
-    <div class="check_mark">
-        <div class="left_mark">
+<div class="content">
+    <div class="enter_password">
+        <p>12345679</p>
+        <a href="#" class="second">next</a>
+    </div>
+    <div class="login">
+        <div class="check_mark">
+            <div class="left_mark">
+            </div>
+            <div class="right_mark">
+            </div>
         </div>
-        <div class="right_mark">
+        <div class="login_form">
+            <div class="login_username">
+                <svg class="login_icon" viewBox="0 0 20 20">
+                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
+                </svg>
+                <input type="text" placeholder="Username" class="input_username">
+            </div>
+            <div class="login_password">
+                <svg class="password_icon" viewBox="0 0 20 20">
+                    <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
+                </svg>
+                <input type="password" placeholder="Password" class="input_password">
+            </div>
+            <div class="login_button_div">
+                <button class="login_button" onclick="return false;">Sign in</button>
+            </div>
+            <div class="register_info">
+                <span>还没有账号?<a class="flip_to_register" href="#">注册</a></span>
+            </div>
         </div>
     </div>
-    <div class="login_form">
-        <div class="login_username">
-            <svg class="login_icon" viewBox="0 0 20 20">
-                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
-            </svg>
-            <input type="text" placeholder="Username" class="input_username">
-        </div>
-        <div class="login_password">
-            <svg class="password_icon" viewBox="0 0 20 20">
-                <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
-            </svg>
-            <input type="password" placeholder="Password" class="input_password">
-        </div>
-        <div class="login_button_div">
-            <button class="login_button" onclick="return false;">Sign in</button>
-        </div>
-        <div class="register_info">
-            <span>还没有账号?<a href="#">注册</a></span>
-        </div>
+    <div class="register_page">
+        <p>12345679</p>
+        <a href="#" class="next_step">next</a>
+    </div>
+    <div class="forget_password">
+        <p>12345679</p>
+        <a href="#" class="third">next</a>
     </div>
 </div>
 </body>
