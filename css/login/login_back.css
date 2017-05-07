@@ -1,5 +1,5 @@
 html, body {
-    height: 85%;
+
 }
 
 body {
@@ -8,6 +8,23 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*.content {
+    width: 300px;
+    height: 550px;
+    left: 40%;
+    top: 15%;
+    position: absolute;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -ms-transition: transform 1s;
+    -o-transition: transform 1s;
+    transition: transform 1s;
+    -webkit-transform-origin:50% 50% -150px;
+    transform-origin: 50% 50% -150px;
+    perspective-origin: 50% 50% ;
+}*/
 /*媒体查询，修改大小*/
 @media (max-height: 1000px) {
     .content {
@@ -16,8 +33,14 @@ body {
         left: 40%;
         top: 15%;
         position: absolute;
+        -webkit-transform-style:preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: transform 1s;
+        -moz-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        -webkit-transform-origin:50% 50% -150px;
         transform-origin: 50% 50% -150px;
     }
 }
@@ -29,8 +52,14 @@ body {
         left: 40%;
         top: 5%;
         position: absolute;
+        -webkit-transform-style:preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: transform 1s;
+        -moz-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        -webkit-transform-origin:50% 50% -150px;
         transform-origin: 50% 50% -150px;
     }
 }
@@ -42,8 +71,14 @@ body {
         left: 40%;
         top: 5%;
         position: absolute;
+        -webkit-transform-style:preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: transform 1s;
+        -moz-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        -webkit-transform-origin:50% 50% -150px;
         transform-origin: 50% 50% -150px;
     }
 }
@@ -55,8 +90,14 @@ body {
         left: 40%;
         top: 5%;
         position: absolute;
+        -webkit-transform-style:preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: transform 1s;
+        -moz-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        -webkit-transform-origin:50% 50% -150px;
         transform-origin: 50% 50% -150px;
     }
 }
@@ -68,8 +109,14 @@ body {
         left: 40%;
         top: 5%;
         position: absolute;
+        -webkit-transform-style:preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: transform 1s;
+        -moz-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        -webkit-transform-origin:50% 50% -150px;
         transform-origin: 50% 50% -150px;
     }
 }
@@ -81,13 +128,26 @@ body {
         left: 40%;
         top: 5%;
         position: absolute;
+        -webkit-transform-style:preserve-3d;
         transform-style: preserve-3d;
+        -webkit-transition: transform 1s;
+        -moz-transition: transform 1s;
+        -ms-transition: transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        -webkit-transform-origin:50% 50% -150px;
         transform-origin: 50% 50% -150px;
     }
 }
+.stage {
+    perspective: 800px;
+}
 /*注意，要实现3D翻转，需要指定绝对位置，然后将几张图片都叠在一起，之后再进行相应的翻转和移动*/
 .login {
+    -webkit-transform: translateZ(0px) rotate(0);
+    -moz-transform: translateZ(0px) rotate(0);
+    -ms-transform: translateZ(0px) rotate(0);
+    -o-transform: translateZ(0px) rotate(0);
     transform: translateZ(0px) rotate(0);
     position: absolute;
     left: 0%;
@@ -230,7 +290,7 @@ input.input_password {
     height: 14%;
     text-align: center;
     padding-top: 24%;
-    font-size: 15px;
+    font-size: 16px;
     color: gray;
 }
 

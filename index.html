@@ -7,43 +7,79 @@
     </script>
     <script>
         $(function () {
-//            !!!!!旋转操作无论如何根据都是开始位置！！！
-            $('.flip_to_register').click(function () {
-                $('.content').css({transform: "rotateY(-90deg)"});
+//            !!!!!旋转操作无论如何根据都是根据开始位置！！！
+            $('.enter_password').hide(0);
+            $('.flip_to_register').bind('click', function () {
+                $('.enter_password').show(500);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(-90deg)");
+                $('.forget_password').hide(500);
             });
-            $('.next_step').click(function () {
-                $('.content').css({transform: "rotateY(-180deg)"});
+            $('a.go_back_login').bind('click', function () {
+                $('.forget_password').show(500);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(0deg)");
+                $('.enter_password').hide(500);
             });
-            $('.second').click(function () {
-                $('.content').css({transform: "rotateY(-270deg)"});
+            $('.go_enter_password_button').bind('click', function () {
+                $('.forget_password').show(1000);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(-180deg)");
+                $('.login').hide(1000)
             });
-            $('.third').click(function () {
-                $('.content').css({transform: "rotateY(-360deg)"});
+            $('.second').bind('click', function () {
+                $('.login').show(1000)
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(-270deg)");
+                $('.register_page').hide(1000);
+            });
+            $('.third').bind('click', function () {
+                $('.register_page').show(1000);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(-360deg)");
+                $('.enter_password').hide(1000);
+            });
+            $('.login_icon').animate({width: '10%'}, 0);
+            $('.password_icon').animate({width: '10%'}, 0);
+            $('.input_username').bind('focus', function () {
+                $('.login_icon').animate({width: '0%'}, 500);
+            });
+            $('.input_username').bind('blur', function () {
+                $('.login_icon').animate({width: '10%'}, 500);
+            });
+            $('.input_password').bind('focus', function () {
+                $('.password_icon').animate({width: '0%'}, 500);
+            });
+            $('.input_password').bind('blur', function () {
+                $('.password_icon').animate({width: '10%'}, 500);
+            });
+            function css3Transform(element, value) {
+                var arrPriex = ["o", "ms", "Moz", "webkit", ""];
+                var length = arrPriex.length;
+                for (var i = 0; i < length; i += 1) {
+                    element.style[arrPriex[i] + "Transform"]
+                        = value;
+                }
+            }
+            $('.n_span').animate({width: '10%',height:'70%'}, 0);
+            $('.register_phone_svg').animate({width: '10%'}, 0);
+            $('.input_nickname').bind('focus', function () {
+                $('.n_span').animate({width: '0%',height:'0%'}, 500);
+                $('.n_span').html('');
+            });
+            $('.input_nickname').bind('blur', function () {
+                $('.n_span').html('N');
+                $('.n_span').animate({width: '10%',height:'70%'}, 500);
+            });
+            $('.register_input_phone').bind('focus', function () {
+                $('.register_phone_svg').animate({width: '0%'}, 500);
+            });
+            $('.register_input_phone').bind('blur', function () {
+                $('.register_phone_svg').animate({width: '10%'}, 500);
             });
         });
     </script>
     <style>
-        .register_page {
-            transform: translateX(50%) translateZ(-150px) rotateY(90deg);
-            width: 100%;
-            height: 100%;
-            background: -webkit-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
-            background: linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
-            font-size: 20px;
-            position: absolute;
-            left: 0%;
-            top: 0%;
-        }
-
-        /* transform是将当前元素进行一定的位移和翻转，将它们存放到指定的长方体的位置。
-        比如：左侧的页面，先往x的反方向移动一半的位置，之后，将z轴移动到不让他出头，之后就将它翻转90度，
-        注意，x和y就可以根据元素的百分比移动，而z不可以。
-        /注意，这些都是根据指定的翻转轴进行翻转的。记得xyz轴的位置即可。
-        逆时针是负数，切记。
-         */
         .enter_password {
+            -webkit-transform: translateZ(-300px) rotateY(180deg);
+            -moz-transform: translateZ(-300px) rotateY(180deg);
+            -ms-transform: translateZ(-300px) rotateY(180deg);
+            -o-transform: translateZ(-300px) rotateY(180deg);
             transform: translateZ(-300px) rotateY(180deg);
             width: 100%;
             height: 100%;
@@ -58,6 +94,10 @@
         }
 
         .forget_password {
+            -webkit-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
+            -moz-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
+            -ms-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
+            -o-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
             transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
             width: 100%;
             height: 100%;
@@ -72,54 +112,94 @@
         }
     </style>
     <link rel="stylesheet" href="css/login/login_back.css">
+    <link rel="stylesheet" href="css/login/register_page.css">
 </head>
 <body>
 <!--顶级的content是用来充当3D旋转的容器-->
-<div class="content">
-
-    <div class="login">
-        <div class="check_mark">
-            <div class="left_mark">
+<div class=".stage">
+    <div class="content">
+        <!--登陆界面-->
+        <div class="login">
+            <div class="check_mark">
+                <div class="left_mark">
+                </div>
+                <div class="right_mark">
+                </div>
             </div>
-            <div class="right_mark">
+            <div class="login_form">
+                <div class="login_username">
+                    <!--svg就很溜-->
+                    <svg class="login_icon" viewBox="0 0 20 20">
+                        <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
+                    </svg>
+                    <input type="text" placeholder="Username" class="input_username">
+                </div>
+                <div class="login_password">
+                    <svg class="password_icon" viewBox="0 0 20 20">
+                        <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
+                    </svg>
+                    <input type="password" placeholder="Password" class="input_password">
+                </div>
+                <div class="login_button_div">
+                    <button class="login_button" onclick="return false;">Sign in</button>
+                </div>
+                <div class="register_info">
+                    <span>还没有账号 ? <a class="flip_to_register" href="#">注册</a></span>
+                </div>
             </div>
         </div>
-        <div class="login_form">
-            <div class="login_username">
-                <!--svg就很溜-->
-                <svg class="login_icon" viewBox="0 0 20 20">
-                    <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
+        <!--右侧的第二个页面-->
+        <div class="register_page">
+            <div class="top_icon">
+                <svg class="circle_icon">
+                    <circle cx="50%" cy="55%" r="25%" stroke="white" stroke-width="20" fill="none"/>
                 </svg>
-                <input type="text" placeholder="Username" class="input_username">
             </div>
-            <div class="login_password">
-                <svg class="password_icon" viewBox="0 0 20 20">
-                    <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
-                </svg>
-                <input type="password" placeholder="Password" class="input_password">
+            <div class="get_vcode">
+                <div class="nickname_div">
+                    <span class="n_span">N</span>
+                    <input class="input_nickname" type="text" placeholder="Nickname">
+                </div>
+                <div class="register_phone_div">
+                    <!--svg就很溜-->
+                    <svg class="register_phone_svg" viewBox="0 0 20 20">
+                        <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
+                    </svg>
+                    <input type="text" placeholder="Username" class="register_input_phone">
+                </div>
+                <div class="register_vcode_div">
+                    <input type="text" placeholder="验证码" class="register_input_vcode">
+                    <button class="get_vcode_button">获取验证码</button>
+                </div>
+                <button class="go_enter_password_button">下一步</button>
+                <div class="go_back_login_div">
+                    <a class="go_back_login" href="#">返回</a>
+                </div>
             </div>
-            <div class="login_button_div">
-                <button class="login_button" onclick="return false;">Sign in</button>
-            </div>
-            <div class="register_info">
-                <span>还没有账号?<a class="flip_to_register" href="#">注册</a></span>
+            <!--<p>12345679</p>-->
+            <!--<button class="next_step">next</button>-->
+        </div>
+        <!--第三个页面-->
+        <div class="enter_password">
+            <p>12345679</p>
+            <button class="second">next</button>
+            <div class="check_mark">
+                <div class="left_mark">
+                </div>
+                <div class="right_mark">
+                </div>
             </div>
         </div>
-    </div>
-    <!--右侧的第二个页面-->
-    <div class="register_page">
-        <p>12345679</p>
-        <a href="#" class="next_step">next</a>
-    </div>
-    <!--第三个页面-->
-    <div class="enter_password">
-        <p>12345679</p>
-        <a href="#" class="second">next</a>
-    </div>
-    <!--第4个页面-->
-    <div class="forget_password">
-        <p>12345679</p>
-        <a href="#" class="third">next</a>
+        <!--第4个页面-->
+        <div class="forget_password">
+            <div class="top_icon">
+                <svg class="circle_icon">
+                    <circle cx="50%" cy="55%" r="25%" stroke="white" stroke-width="20" fill="none"/>
+                </svg>
+            </div>
+            <p>12345679</p>
+            <button class="third">next</button>
+        </div>
     </div>
 </div>
 </body>
