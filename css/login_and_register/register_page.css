@@ -17,8 +17,8 @@
     background: -moz-linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
     background: linear-gradient(top, rgba(186, 87, 239, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
     position: absolute;
-    left: 0%;
-    top: 0%;
+    left: 0;
+    top: 0;
 }
 .top_icon {
     width: 100%;
