@@ -238,11 +238,10 @@ input.input_password {
     padding-top: 3%;
     width: 100%;
     height: 14%;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 
 .login_button {
-    margin-top: 15%;
     width: 100%;
     height: 100%;
     background-color: mediumvioletred;
@@ -254,13 +253,24 @@ input.input_password {
 .login_button:active {
     border: none;
 }
-
+div.go_forget_password {
+    margin-top: 5%;
+    margin-left: 4%;
+    padding-top: 3%;
+    width: 100%;
+    height: 14%;
+    text-align: right;
+}
+a.go_to_forget{
+    color: white;
+    text-decoration: none;
+}
 .register_info {
     margin-left: 4%;
     width: 100%;
     height: 14%;
     text-align: center;
-    margin-top: 24%;
+    margin-top: 8%;
     font-size: 16px;
     color: gray;
 }

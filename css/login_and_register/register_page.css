@@ -107,9 +107,9 @@ div.register_vcode_div {
 
 input.register_input_vcode {
     font-size: 1em;
-    width: 33%;
+    width: 38%;
     height: 90%;
-    margin-right: 15%;
+    margin-right: 5%;
     background-color: transparent;
     border: none;
     color: white;
@@ -119,7 +119,7 @@ button.get_vcode_button {
     border-radius: 15px;
     color: white;
     font-size: 1em;
-    width: 45%;
+    width: 50%;
     height: 90%;
     border: none;
 }
@@ -142,7 +142,7 @@ div.go_back_login_div {
     height: 15%;
     text-align: center;
 }
-div.go_back_login_div a {
+div.go_back_login_div a.go_back_login{
     color: white;
     text-decoration: none;
 }

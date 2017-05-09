@@ -7,6 +7,7 @@
     </script>
     <script>
         $(function () {
+            var from_which = 0;
 //            !!!!!旋转操作无论如何根据都是根据开始位置！！！
             $('.enter_password').hide(0);
             $('.flip_to_register').bind('click', function () {
@@ -14,25 +15,46 @@
                 css3Transform(document.getElementsByClassName('content')[0], "rotateY(-90deg)");
                 $('.forget_password').hide(500);
             });
+            $('.go_to_forget').bind('click', function () {
+                $('.enter_password').show(500);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(90deg)");
+                $('.register_page').hide(500);
+            });
+
+            $('.go_back_login_from_forget').bind('click', function () {
+                $('.enter_password').hide(500);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(0deg)");
+                $('.register_page').show(500);
+            });
             $('a.go_back_login').bind('click', function () {
                 $('.forget_password').show(500);
                 css3Transform(document.getElementsByClassName('content')[0], "rotateY(0deg)");
                 $('.enter_password').hide(500);
             });
             $('.go_enter_password_button').bind('click', function () {
+                from_which = 1;
                 $('.forget_password').show(1000);
                 css3Transform(document.getElementsByClassName('content')[0], "rotateY(-180deg)");
-                $('.login').hide(1000)
+                $('.login').hide(1000);
+                $('.confirm_register_button').html('Register');
             });
-            $('.second').bind('click', function () {
-                $('.login').show(1000)
-                css3Transform(document.getElementsByClassName('content')[0], "rotateY(-270deg)");
-                $('.register_page').hide(1000);
-            });
-            $('.third').bind('click', function () {
+            $('.forget_password_button').bind('click',function () {
+                from_which = 2;
                 $('.register_page').show(1000);
-                css3Transform(document.getElementsByClassName('content')[0], "rotateY(-360deg)");
-                $('.enter_password').hide(1000);
+                css3Transform(document.getElementsByClassName('content')[0], "rotateY(180deg)");
+                $('.login').hide(1000);
+                $('.confirm_register_button').html('Reset password');
+            });
+            $('.go_back_up').bind('click',function () {
+                if(from_which==1) {
+                    $('.login').show(1000);
+                    css3Transform(document.getElementsByClassName('content')[0], "rotateY(-90deg)");
+                    $('.forget_password').hide(1000);
+                }else  if(from_which==2) {
+                    $('.login').show(1000);
+                    css3Transform(document.getElementsByClassName('content')[0], "rotateY(90deg)");
+                    $('.register_page').hide(1000);
+                }
             });
             $('.login_icon').animate({width: '10%'}, 0);
             $('.password_icon').animate({width: '10%'}, 0);
@@ -56,15 +78,16 @@
                         = value;
                 }
             }
-            $('.n_span').animate({width: '10%',height:'70%'}, 0);
+
+            $('.n_span').animate({width: '10%', height: '70%'}, 0);
             $('.register_phone_svg').animate({width: '10%'}, 0);
             $('.input_nickname').bind('focus', function () {
-                $('.n_span').animate({width: '0%',height:'0%'}, 500);
+                $('.n_span').animate({width: '0%', height: '0%'}, 500);
                 $('.n_span').html('');
             });
             $('.input_nickname').bind('blur', function () {
                 $('.n_span').html('N');
-                $('.n_span').animate({width: '10%',height:'70%'}, 500);
+                $('.n_span').animate({width: '10%', height: '70%'}, 500);
             });
             $('.register_input_phone').bind('focus', function () {
                 $('.register_phone_svg').animate({width: '0%'}, 500);
@@ -72,47 +95,34 @@
             $('.register_input_phone').bind('blur', function () {
                 $('.register_phone_svg').animate({width: '10%'}, 500);
             });
+            $('.first_enter_password_icon').animate({width: '10%'}, 0);
+            $('.confirm_password_icon').animate({width: '10%'}, 0);
+            $('.first_enter_password_input').bind('focus', function () {
+                $('.first_enter_password_icon').animate({width: '0%'}, 500);
+            });
+            $('.first_enter_password_input').bind('blur', function () {
+                $('.first_enter_password_icon').animate({width: '10%'}, 500);
+            });
+            $('.confirm_password_input').bind('focus', function () {
+                $('.confirm_password_icon').animate({width: '0%'}, 500);
+            });
+            $('.confirm_password_input').bind('blur', function () {
+                $('.confirm_password_icon').animate({width: '10%'}, 500);
+            });
+
+            $('.register_phone_svg').animate({width: '10%'}, 0);
+            $('.forget_input_phone').bind('focus', function () {
+                $('.register_phone_svg').animate({width: '0%'}, 500);
+            });
+            $('.forget_input_phone').bind('blur', function () {
+                $('.register_phone_svg').animate({width: '10%'}, 500);
+            });
         });
     </script>
-    <style>
-        .enter_password {
-            -webkit-transform: translateZ(-300px) rotateY(180deg);
-            -moz-transform: translateZ(-300px) rotateY(180deg);
-            -ms-transform: translateZ(-300px) rotateY(180deg);
-            -o-transform: translateZ(-300px) rotateY(180deg);
-            transform: translateZ(-300px) rotateY(180deg);
-            width: 100%;
-            height: 100%;
-            background: -webkit-linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
-            background: linear-gradient(top, rgba(142, 213, 220, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
-            font-size: 20px;
-            position: absolute;
-            left: 0%;
-            top: 0%;
-        }
-
-        .forget_password {
-            -webkit-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
-            -moz-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
-            -ms-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
-            -o-transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
-            transform: translateX(-50%) translateZ(-150px) rotateY(-90deg);
-            width: 100%;
-            height: 100%;
-            background: -webkit-linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* Firefox 3.6 - 15 */
-            background: linear-gradient(top, rgba(171, 239, 196, 0.34) 0%, rgba(0, 0, 0, 0.5) 100%); /* 标准的语法（必须放在最后） */
-            font-size: 20px;
-            position: absolute;
-            left: 0%;
-            top: 0%;
-        }
-    </style>
-    <link rel="stylesheet" href="css/login/login_back.css">
-    <link rel="stylesheet" href="css/login/register_page.css">
+    <link rel="stylesheet" href="css/login_and_register/login_back.css">
+    <link rel="stylesheet" href="css/login_and_register/register_page.css">
+    <link rel="stylesheet" href="css/login_and_register/confirm_password.css">
+    <link rel="stylesheet" href="css/login_and_register/forget_password.css">
 </head>
 <body>
 <!--顶级的content是用来充当3D旋转的容器-->
@@ -139,6 +149,9 @@
                         <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
                     </svg>
                     <input type="password" placeholder="Password" class="input_password">
+                </div>
+                <div class="go_forget_password">
+                    <a class="go_to_forget" href="#">忘记密码?</a>
                 </div>
                 <div class="login_button_div">
                     <button class="login_button" onclick="return false;">Sign in</button>
@@ -181,12 +194,32 @@
         </div>
         <!--第三个页面-->
         <div class="enter_password">
-            <p>12345679</p>
-            <button class="second">next</button>
+            <!--            <p>12345679</p>
+                        <button class="second">next</button>-->
             <div class="check_mark">
                 <div class="left_mark">
                 </div>
                 <div class="right_mark">
+                </div>
+            </div>
+            <div class="confirm_password_content">
+                <div class="confirm_password_div">
+                    <svg class="first_enter_password_icon" viewBox="0 0 20 20">
+                        <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
+                    </svg>
+                    <input type="password" placeholder="Password" class="first_enter_password_input">
+                </div>
+                <div class="confirm_password_div">
+                    <svg class="confirm_password_icon" viewBox="0 0 20 20">
+                        <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
+                    </svg>
+                    <input type="password" placeholder="Confirm" class="confirm_password_input">
+                </div>
+                <div class="login_button_div">
+                    <button class="confirm_register_button" onclick="return false;">Register</button>
+                </div>
+                <div class="go_back_up_div">
+                    <a class="go_back_up" href="#">上一步</a>
                 </div>
             </div>
         </div>
@@ -197,8 +230,23 @@
                     <circle cx="50%" cy="55%" r="25%" stroke="white" stroke-width="20" fill="none"/>
                 </svg>
             </div>
-            <p>12345679</p>
-            <button class="third">next</button>
+            <div class="forget_get_vcode">
+                <div class="forget_phone_div">
+                    <!--svg就很溜-->
+                    <svg class="register_phone_svg" viewBox="0 0 20 20">
+                        <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
+                    </svg>
+                    <input type="text" placeholder="Username" class="forget_input_phone">
+                </div>
+                <div class="forget_get_vcode_div">
+                    <input type="text" placeholder="验证码" class="forget_input_vcode">
+                    <button class="forget_get_vcode_button">获取验证码</button>
+                </div>
+                <button class="forget_password_button">下一步</button>
+                <div class="go_back_login_div">
+                    <a class="go_back_login_from_forget" href="#">返回</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
