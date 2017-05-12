@@ -4,21 +4,23 @@
  */
 $(function () {
     var time_out = setTimeout(moveToRight, 3500);
-    var isMove = false;
+    var isMove = true;
     $('.right_turn').click(function () {
-        clearTimeout(time_out);
         if (!isMove) {
+            clearTimeout(time_out);
+            isMove = true;
             moveToRight();
         }
     });
     $('.left_turn').click(function () {
-        clearTimeout(time_out);
         if (!isMove) {
+            clearTimeout(time_out);
+            isMove = true;
             currentMoveToLeft();
         }
     });
     function moveToRight() {
-        isMove = true;
+        clearTimeout(time_out);
         nextPrepare();
         $('.current h1').animate({left:250},300,function () {
             $('.current p').animate({left: 250}, 300, function () {
@@ -63,6 +65,7 @@ $(function () {
     }
 
     function currentMoveToLeft() {
+        clearTimeout(time_out);
         prevPrepare();
         $('.current .slide_img').animate({left:"41%"},400,function () {
             $('.current h1').animate({left:"15%"},400);
@@ -70,11 +73,11 @@ $(function () {
                 $('.current h1').animate({left:"5%"},600,function () {
                     $(this).animate({left: "120%", opacity: 0}, 800,function () {
                         $(this).hide(0);
-                        moveToPrev();
                     });
                 });
                 $(this).animate({left: "120%", opacity: 0},800,function () {
                     $(this).hide(0);
+                    moveToPrev();
                 });
             });
             $(this).animate({left: "120%", opacity: 0}, 800,function () {

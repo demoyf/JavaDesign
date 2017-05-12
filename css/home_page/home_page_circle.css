@@ -1,9 +1,13 @@
 .my_slider {
-    width: 100%;
+    top: 20%;
+    left: 4%;
+    width: 92%;
     height: 480px;
     position: absolute;
     overflow: hidden;
     background-color: rebeccapurple;
+    box-shadow: 5px 5px 10px #888888;;
+    display: block;
 }
 .my_slide {
     display: block;
@@ -21,9 +25,8 @@
     left: 10%;
     top: 30%;
     width: 30%;
-    font-size: 3em;
 }
-.my_slide p{
+.my_slide p {
     position: absolute;
     left: 10%;
     top: 50%;
@@ -35,7 +38,6 @@
     left: 50%;
     top: 25%;
     width: 60%;
-    height: 60%;
 }
 .left_border {
     position: absolute;
