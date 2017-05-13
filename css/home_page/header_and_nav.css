@@ -4,7 +4,6 @@ header {
     background-color: blueviolet;
     box-shadow: 4px 2px 10px #888888;
     position: fixed;
-    margin-top: 0%;
     margin-top: -10px;
     display: inline;
     z-index: 30;
@@ -62,7 +61,7 @@ header .login_or_register_string {
 
 header .search_icon {
     float: left;
-    background-color: mediumslateblue;
+    background-color: white;
     background-image: url("../../img/home/search_icon.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -78,7 +77,7 @@ header .search_icon {
 
 header .user_icon {
     float: left;
-    background-color: mediumslateblue;
+    background-color: white;
     background-image: url("../../img/home/user_icon.png");
     background-repeat: no-repeat;
     background-position: center;

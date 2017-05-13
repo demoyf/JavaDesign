@@ -4,7 +4,7 @@
  */
 $(function () {
     var time_out = setTimeout(moveToRight, 3500);
-    var isMove = true;
+    var isMove = false;
     $('.right_turn').click(function () {
         if (!isMove) {
             clearTimeout(time_out);
