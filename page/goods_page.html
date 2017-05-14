@@ -44,7 +44,6 @@
         <li><a href="#">联系我们</a></li>
     </ul>
 </nav>
-<div class="type_content" onmouseleave="hideParticular()">
     <div class="my_type_div">
         <ul>
             <li class="type_1">数码科技</li>
@@ -55,7 +54,7 @@
             <li class="type_6">其他</li>
         </ul>
     </div>
-    <div class="particular_type_div">
+    <div class="particular_type_div" onmouseleave="hideParticular()">
         <div class="one_part">
             <div class="type_title_div">
                <span class="type_border_span">1
@@ -81,9 +80,8 @@
             </div>
         </div>
     </div>
-</div>
 <!--商品详情，加多一个多余的div，然分页按钮可以显示在内容之下-->
-<div class="temp_content">
+<div class="temp_content" onmousedown="hideParticular()">
     <!--注意需要加一个br，不然会在同一行显示-->
     <div class="product_content_div">
         <div class="detail_product">
@@ -123,7 +121,7 @@
             <span class="detail_buy product_5">Buy</span>
         </div>
     </div>
-    <div class="pagination_div">
+    <div class="pagination_div" onmouseleave="hideParticular()">
         <a class="pagination_lt">&lt;</a>
         <ul>
             <li><a>1</a></li>

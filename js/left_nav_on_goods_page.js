@@ -151,13 +151,15 @@ $(function () {
     $(window).scroll(function () {
         var temp = $(this).scrollTop();
         if (temp>100) {
-            $('.type_content').css({"margin-top":"8%"});
+            $('.my_type_div').css({"margin-top":"8%"});
+            $('.particular_type_div').css({"margin-top":"8%"});
         }else{
-            $('.type_content').css({"margin-top":"15%"});
+            $('.my_type_div').css({"margin-top":"15%"});
+            $('.particular_type_div').css({"margin-top":"15%"});
         }
     });
     $('.my_type_div ul li').hover(function () {
-        var temp_class = $(this).attr("class")
+        var temp_class = $(this).attr("class");
         if (temp_class == 'type_1') {
             addList(0);
         } else if (temp_class == 'type_2') {
@@ -188,6 +190,9 @@ $(function () {
             $('.particular_type_div').html(my_string);
         }
         $('.particular_type_div').show(0);
+    });
+    $('header').click(function () {
+        hideParticular();
     });
 });
 function hideParticular() {
