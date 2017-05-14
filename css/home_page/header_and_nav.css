@@ -162,7 +162,7 @@ nav.my_nav ul li:last-child {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 1em;
+    font-size: 1.3em;
     text-align: center;
     margin-top: 10%;
 }
@@ -182,4 +182,5 @@ nav.my_nav ul li:last-child {
 .short_nav_show ul li a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.75);
+    font-size: 1.3em;
 }
