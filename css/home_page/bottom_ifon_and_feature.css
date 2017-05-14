@@ -48,6 +48,7 @@
     padding: 0.3em;
     border: 1px solid gray;
     border-radius: 7px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .featured_products .product .buy:hover {

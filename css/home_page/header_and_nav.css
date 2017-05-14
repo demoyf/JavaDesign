@@ -172,16 +172,19 @@ nav.my_nav ul li:last-child {
     margin-bottom: 10%;
     margin-left: 5%;
     margin-right: 5%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .short_nav_show ul li:last-child {
     border-bottom: none;
 }
-
 .short_nav_show ul li a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.75);
     font-size: 1em;
+}
+.short_nav_show ul li:hover {
+    cursor: pointer;
+    background-color: slateblue;
 }
