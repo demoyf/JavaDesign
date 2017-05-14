@@ -148,12 +148,44 @@
         div.pagination_div {
             display: block;
             width: 40%;
-            height: 40px;
+            height: 36px;
             clear: both;
-            background-color: red;
             margin-bottom: 10%;
             margin-left: 41%;
         }
+
+        .pagination_div ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pagination_div ul li {
+            float: left;
+        }
+        .pagination_div .pagination_lt,.pagination_div .pagination_gt{
+            float: left;
+        }
+        .pagination_div .pagination_lt,.pagination_div ul li,
+        .pagination_div .pagination_gt {
+            width: 6%;
+            height: 36px;
+            background-color: white;
+            margin-left: 4%;
+            font-size: 1.5em;
+            color: rgba(0,0,0,0.54);
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 0.3em;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .pagination_div .pagination_lt:hover,.pagination_div ul li:hover,
+        .pagination_div .pagination_gt:hover {
+            cursor: pointer;
+            background-color: slateblue;
+        }
+
         footer {
             width: 96%;
             background-color: slateblue;
@@ -286,7 +318,15 @@
         </div>
     </div>
     <div class="pagination_div">
-
+        <a class="pagination_lt">&lt;</a>
+        <ul>
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>3</a></li>
+            <li><a>4</a></li>
+            <li><a>5</a></li>
+        </ul>
+        <a class="pagination_gt">&gt;</a>
     </div>
     <footer>
         <p>Copyright © 2014.Company name All rights reserved.</p>
