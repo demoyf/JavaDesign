@@ -31,11 +31,15 @@
 .featured_products .product .product_name {
     color: rgba(0,0,0,0.62);
     font-size: 1em;
+    display: inline-block;
+    overflow-x: hidden;
 }
 
 .featured_products .product .product_cost {
     color: rgba(0,0,0,0.85);
     font-size: 1.8em;
+    display: inline-block;
+    overflow-x: hidden;
 }
 
 .featured_products .product .buy {

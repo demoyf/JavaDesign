@@ -67,7 +67,7 @@ $(function () {
             } else {
                 $('.short_nav_show').show(0).css({opacity: 0, height: 0}).animate({
                     opacity: 1,
-                    height: "38%"
+                    height: "41%"
                 }, 500).show(0);
             }
         }
