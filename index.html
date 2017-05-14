@@ -8,119 +8,7 @@
     <link href="css/home_page/bottom_ifon_and_feature.css" rel="stylesheet">
     <script src="js/jquery-1.3.2.min.js"></script>
     <script src="js/home_page_circle.js"></script>
-    <style>
-        .short_nav_show {
-            width: 10%;
-            height: 38%;
-            position: fixed;
-            border-radius: 10px;
-            z-index: 30;
-            background-color: white;
-            margin-top: 3.8%;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-
-        .short_nav_show ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 1.3em;
-            text-align: center;
-            margin-top: 10%;
-        }
-
-        .short_nav_show ul li {
-            margin-bottom: 10%;
-            margin-left: 5%;
-            margin-right: 5%;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .short_nav_show ul li:last-child {
-            border-bottom: none;
-        }
-
-        .short_nav_show ul li a {
-            text-decoration: none;
-            color: rgba(0, 0, 0, 0.75);
-        }
-    </style>
-    <script>
-        $(function () {
-            var isClick = true;
-            $('body').click(function (e) {
-                if (e.clientX>150||e.clientY>300) {
-                    if ($('.short_nav_show').is(":visible")) {
-                        $('.short_nav_show').animate({
-                            opacity: 0,
-                            height: 0
-                        }, 500,function () {
-                            $(this).hide(0);
-                        });
-                    }
-                }
-            });
-            $(window).scroll(function () {
-                //输出垂直的滚动距离
-                var scroll_length = $(this).scrollTop();
-//                根据滚动的距离分别修改透明度
-                if (scroll_length > 5 && scroll_length < 80) {
-                    var op_length = 80 - scroll_length;
-                    if (op_length >= 0) {
-                        var opacity_o = op_length / 80;
-                        if (opacity_o < 0.2) {
-                            opacity_o = 0.2;
-                        }
-                        $('.my_nav').css({opacity: (opacity_o - 0.2)});
-                        $('.short_nav').css({opacity: (1 - opacity_o)});
-                    }
-                } else if (scroll_length < 5) {
-                    $('.my_nav').css({opacity: 1});
-                    $('.short_nav').css({opacity: (0)});
-                } else if (scroll_length > 80 && scroll_length < 550) {
-                    $('.short_nav').css({opacity: (1)});
-                    var op_length = 550 - scroll_length;
-                    var op = op_length / 480;
-                    if (op < 0) {
-                        op = 0;
-                    }
-                    $('.my_slider').css({opacity: op});
-                }
-            });
-
-            $('.nav_search_input').bind("focus", function () {
-                $(this).animate({width: "15%", marginLeft: "20%"}, 800);
-            });
-
-            $('.nav_search_input').bind("blur", function () {
-                if ($(this).val() == '')
-                    $(this).animate({width: "5em", marginLeft: "25%"}, 800);
-            });
-
-            $('.search_icon').click(function () {
-
-            });
-            $('.short_nav').click(function () {
-                if ($('.short_nav').css('opacity')>0.5) {
-                    if ($('.short_nav_show').is(":visible")) {
-                        $('.short_nav_show').animate({
-                            opacity: 0,
-                            height: 0
-                        }, 500,function () {
-                            $(this).hide(0);
-                        });
-                    } else {
-                        $('.short_nav_show').show(0).css({opacity: 0, height: 0}).animate({
-                            opacity: 1,
-                            height: "38%"
-                        }, 500).show(0);
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="js/header_model_js.js"></script>
 </head>
 <body>
 <!--整体结构很明确，就是轮播图的位置用了绝对位置感觉很不好，
@@ -139,24 +27,24 @@
 </header>
 <div class="short_nav_show">
     <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">发布商品</a></li>
+        <li><a href="#">求购商品</a></li>
+        <li><a href="#">我的购物车</a></li>
+        <li><a href="#">反馈与意见</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">关于</a></li>
     </ul>
 </div>
 <nav class="my_nav">
     <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">发布商品</a></li>
+        <li><a href="#">求购商品</a></li>
+        <li><a href="#">我的购物车</a></li>
+        <li><a href="#">反馈与意见</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">关于</a></li>
     </ul>
 </nav>
 <div class="my_slider">
