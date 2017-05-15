@@ -2,7 +2,6 @@
  * Created by alone on 2017/5/13.
  */
 $(function () {
-    var isClick = true;
     $('body').click(function (e) {
         if (e.clientX>150||e.clientY>300) {
             if ($('.short_nav_show').is(":visible")) {
@@ -20,7 +19,7 @@ $(function () {
         var scroll_length = $(this).scrollTop();
 //                根据滚动的距离分别修改透明度
         if (scroll_length > 5 && scroll_length < 80) {
-            var op_length = 80 - scroll_length;
+            var op_length = (80 - scroll_length);
             if (op_length >= 0) {
                 var opacity_o = op_length / 80;
                 if (opacity_o < 0.2) {
