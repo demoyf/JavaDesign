@@ -80,10 +80,11 @@
     color: blueviolet;
 }
 .temp_content {
-    width: 100%;
+    width: 99%;
     position: absolute;
     display: inline-block;
     top: 20%;
+    padding: 0;
 }
 .product_content_div {
     width: 70%;
