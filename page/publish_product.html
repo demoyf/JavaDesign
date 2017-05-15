@@ -27,6 +27,25 @@
                     $(this).animate({width: "27%", height: "5em"}, 500);
                 }
             });
+            var temp = 1;
+            $(".upload_img_input").change(function(){
+                var objUrl = getObjectURL(this.files[0]);
+                $('.show_choose_img').attr("src", objUrl);
+                $('.show_choose_img').css({opacity: 0});
+                $('.show_choose_img').show(0).animate({opacity:1},1000);
+            });
+            // 获取图片的url。是临时文件
+            function getObjectURL(file) {
+                var url = null ;
+                if (window.createObjectURL!=undefined) { // basic
+                    url = window.createObjectURL(file) ;
+                } else if (window.URL!=undefined) { // mozilla(firefox)
+                    url = window.URL.createObjectURL(file) ;
+                } else if (window.webkitURL!=undefined) { // webkit or chrome
+                    url = window.webkitURL.createObjectURL(file) ;
+                }
+                return url ;
+            }
             $('.choose_first_type').change(function () {
                 var getSelect = $(this).children('option:selected').attr("id");
                 switch (getSelect) {
@@ -168,7 +187,41 @@
             padding-top: 0.4em;
             font-weight: 800;
         }
+        .publish_one_par .img_content {
+            margin-top: 3%;
+            margin-left: 5%;
+            width: 10%;
+            height: 3.8em;
+            float: left;
+            background-image: url("../img/add_upload_icon.png");
+            background-size: 100%;
+            border-radius: 5px;
+            border: 1px solid slateblue;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            padding: 0;
+        }
+        .publish_one_par .img_content input.upload_img_input {
+            width: 100%;
+            height: 100%;
+            font-size: 1em;
+            color: rgba(0,0,0,0.7);
+            opacity: 0;
+        }
 
+        .publish_one_par .img_content input.upload_img_input:hover {
+            cursor: pointer;
+        }
+        img.show_choose_img {
+            margin-left: 12%;
+            margin-top: 2%;
+            width: 35%;
+            border-radius: 5px;
+            border: 1px solid slateblue;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            display: none;
+            opacity:0;
+        }
         footer {
             width: 96%;
             background-color: slateblue;
@@ -310,8 +363,16 @@
                     </select>
                 </div>
             </div>
+            <div class="publish_one_par">
+                <div class="publish_title">
+                    <h3>图片</h3>
+                </div>
+                <div class="img_content">
+                    <input class="upload_img_input" type="file">
+                </div>
+                <img src="" class="show_choose_img" id="show_choose_img">
+            </div>
         </form>
-
     </div>
     <footer>
         <p>Copyright © 2014.Company name All rights reserved.</p>
