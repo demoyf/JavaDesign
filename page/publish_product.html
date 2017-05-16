@@ -4,240 +4,11 @@
     <meta charset="UTF-8">
     <title>发布商品</title>
     <link href="../css/home_page/header_and_nav.css" rel="stylesheet">
+    <link href="../css/publish_product/publish_product.css" rel="stylesheet">
     <script src="../js/jquery-1.3.2.min.js"></script>
     <script src="../js/home/header_model_js.js"></script>
     <script src="../js/mall/type_list_obj.js"></script>
-    <script>
-        $(function () {
-            var typeList = getTypeList();
-            var curFirst = 0;
-            var curSecond = 0;
-            updateSecondSelect();
-            $('.title_input').bind('focus',function () {
-                $(this).animate({width: "60%"}, 500);
-            });
-            $('.title_input').bind('blur',function () {
-                $(this).animate({width: "27%"}, 500);
-            });
-            $('.detail_textarea').bind('focus',function () {
-                $(this).animate({width: "60%", height: "8em"}, 500);
-            });
-            $('.detail_textarea').bind('blur',function () {
-                if ($(this).val() == ''){
-                    $(this).animate({width: "27%", height: "5em"}, 500);
-                }
-            });
-            var temp = 1;
-            $(".upload_img_input").change(function(){
-                var objUrl = getObjectURL(this.files[0]);
-                $('.show_choose_img').attr("src", objUrl);
-                $('.show_choose_img').css({opacity: 0});
-                $('.show_choose_img').show(0).animate({opacity:1},1000);
-            });
-            // 获取图片的url。是临时文件
-            function getObjectURL(file) {
-                var url = null ;
-                if (window.createObjectURL!=undefined) { // basic
-                    url = window.createObjectURL(file) ;
-                } else if (window.URL!=undefined) { // mozilla(firefox)
-                    url = window.URL.createObjectURL(file) ;
-                } else if (window.webkitURL!=undefined) { // webkit or chrome
-                    url = window.webkitURL.createObjectURL(file) ;
-                }
-                return url ;
-            }
-            $('.choose_first_type').change(function () {
-                var getSelect = $(this).children('option:selected').attr("id");
-                switch (getSelect) {
-                    case "type_1":
-                        curFirst = 0;
-                        break;
-                    case "type_2":
-                        curFirst = 1;
-                        break;
-                    case "type_3":
-                        curFirst = 2;
-                        break;
-                    case "type_4":
-                        curFirst = 3;
-                        break;
-                    case "type_5":
-                        curFirst = 4;
-                        break;
-                    case "type_6":
-                        curFirst = 5;
-                        break;
-                }
-                curSecond = 0;
-                updateSecondSelect();
-            });
-            $('.choose_second_type').change(function () {
-                var getSelect = $(this).children('option:selected').attr("id");
-                curSecond = (getSelect-10000);
-                updateThirdSelect();
-            });
-            function updateThirdSelect() {
-                var temp = typeList[curFirst];
-                var thirdText = "";
-                var which = temp[curSecond];
-                var res = which.content;
-                for(j = 0;j<res.length;j++) {
-                    var rel_type = res[j];
-                    thirdText+="<option id = '"+rel_type.id+"' value="+rel_type.id+">"+rel_type.name+"</option>";
-                }
-                $('.choose_third_type').html(thirdText);
-            }
-            function updateSecondSelect() {
-                var temp = typeList[curFirst];
-                var secondText = "";
-                var thirdText = "";
-                for(i = 0;i<temp.length;i++) {
-                    var which = temp[i];
-                    secondText += "<option id = '"+(10000+i)+"'>"+which.name+"</option>";
-                    if(i==curSecond) {
-                        var res = which.content;
-                        for(j = 0;j<res.length;j++) {
-                            var rel_type = res[j];
-                            thirdText+="<option id = '"+rel_type.id+"' value="+rel_type.id+">"+rel_type.name+"</option>";
-                        }
-                    }
-                }
-                $('.choose_second_type').html(secondText);
-                $('.choose_third_type').html(thirdText);
-            }
-        });
-    </script>
-    <style>
-        .top_content {
-            width: 99%;
-            height: auto;
-            /*background-color: aquamarine;*/
-            position: absolute;
-            display: block;
-        }
-        .publish_product_div {
-            padding-left: 23%;
-            padding-top: 1%;
-            padding-bottom: 5%;
-            width: 50%;
-            height: auto;
-            margin-left: 15%;
-            margin-top: 12%;
-            margin-bottom: 10%;
-            /*background-color: red;*/
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-            display: inline-block;
-        }
-        .publish_one_par {
-            width: 80%;
-            margin-top: 1%;
-            display: block;
-            float: left;
-        }
-        .publish_one_par .publish_title {
-            width: 15%;
-            text-align: center;
-            float: left;
-            color: rgba(0,0,0,0.77);
-            font-weight: 100;
-        }
-        .publish_one_par .publish_content {
-            margin-top: 3%;
-            margin-left: 20%;
-            width: 80%;
-        }
-        .publish_one_par .publish_content input {
-            border-radius: 5px;
-            border: 1px solid slateblue;
-            padding: 0.3em;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            font-size: 1em;
-            color: rgba(0,0,0,0.7);
-        }
-        .publish_one_par .publish_content select {
-            width: 29%;
-            border-radius: 5px;
-            border: 1px solid slateblue;
-            padding: 0.3em;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            font-size: 0.9em;
-            float: left;
-        }
-        .title_input {
-            width: 27%;
-        }
-        .cost_input ,.count_input{
-            width: 27%;
-        }
-        textarea.detail_textarea {
-            width: 27%;
-            height: 5em;
-            resize: none;
-            border-radius: 5px;
-            border: 1px solid slateblue;
-            padding: 0.3em;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-            font-size: 1.3em;
-        }
-        span.to_left {
-            float: left;
-            color: slateblue;
-            padding-top: 0.4em;
-            font-weight: 800;
-        }
-        .publish_one_par .img_content {
-            margin-top: 3%;
-            margin-left: 5%;
-            width: 10%;
-            height: 3.8em;
-            float: left;
-            background-image: url("../img/add_upload_icon.png");
-            background-size: 100%;
-            border-radius: 5px;
-            border: 1px solid slateblue;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            padding: 0;
-        }
-        .publish_one_par .img_content input.upload_img_input {
-            width: 100%;
-            height: 100%;
-            font-size: 1em;
-            color: rgba(0,0,0,0.7);
-            opacity: 0;
-        }
-
-        .publish_one_par .img_content input.upload_img_input:hover {
-            cursor: pointer;
-        }
-        img.show_choose_img {
-            margin-left: 12%;
-            margin-top: 2%;
-            width: 35%;
-            border-radius: 5px;
-            border: 1px solid slateblue;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            padding: 0;
-            display: none;
-            opacity:0;
-        }
-        footer {
-            width: 96%;
-            background-color: slateblue;
-            box-shadow: 4px 2px 10px #888888;
-            border-radius: 10px;
-            height: 80px;
-            margin-left: 2%;
-        }
-        footer p {
-            padding-top: 35px;
-            vertical-align: middle;
-            text-align: center;
-            color: white;
-            font-size: 1.2em;
-        }
-    </style>
+    <script src="../js/publish/publish_product.js"></script>
 </head>
 <body>
 <header>
@@ -277,13 +48,14 @@
 </nav>
 <div class="top_content">
     <div class="publish_product_div">
+        <!--@TODO表单还未填写 --->
         <form>
             <div class="publish_one_par">
                 <div class="publish_title">
                     <h3>商品名</h3>
                 </div>
                 <div class="publish_content">
-                    <input type="text" class="title_input" name="title">
+                    <input type="text" class="title_input" name="name" required>
                 </div>
             </div>
             <div class="publish_one_par">
@@ -308,7 +80,7 @@
                     <h3>单价</h3>
                 </div>
                 <div class="publish_content cost_content">
-                    <input type="text" class="cost_input" name="cost"><span>  RMB(.00)</span>
+                    <input type="text" class="cost_input" name="price" required><span>  RMB(.00)</span>
                 </div>
             </div>
             <div class="publish_one_par">
@@ -316,7 +88,7 @@
                     <h3>数量</h3>
                 </div>
                 <div class="publish_content">
-                    <input type="text" class="count_input" name="count">
+                    <input type="text" class="count_input" name="quantity" required>
                 </div>
             </div>
             <div class="publish_one_par">
@@ -325,7 +97,7 @@
                 </div>
                 <div class="publish_content">
                     <textarea class="detail_textarea" maxlength="122"
-                              placeholder="留下联系方式,方便买家联系"></textarea>
+                              placeholder="留下联系方式,方便买家联系" name="remark" required></textarea>
                 </div>
             </div>
             <div class="publish_one_par">
@@ -368,9 +140,12 @@
                     <h3>图片</h3>
                 </div>
                 <div class="img_content">
-                    <input class="upload_img_input" type="file">
+                    <input class="upload_img_input" type="file" name="image" required>
                 </div>
                 <img src="" class="show_choose_img" id="show_choose_img">
+            </div>
+            <div class="submit_content_div">
+                 <input type="submit" value="提交" class="submit_input">
             </div>
         </form>
     </div>
