@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="icon" href="../img/page_icon.png">
+    <link rel="stylesheet" href="../css/home_page/header_and_nav.css">
+    <link rel="stylesheet" href="../css/personal/personal_info.css">
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/home/header_model_js.js"></script>
+    <script>
+        $( function() {
+            $( "#accordion" ).accordion();
+            $('.update_button').click(function () {
+                var type = $(this).siblings(".first_info").children("input").attr("type");
+                if (type=="radio") {
+//                    单选按钮
+
+                }else {
+                    var val = $(this).siblings(".first_info").children("input").val();
+                    if (val==undefined||val=='') {
+                        $(this).siblings(".first_info").children(".reqiure_enter").show(0);
+                    }else{
+//                        修改，修改类名或id，直接获取类名就可以
+
+                    }
+                }
+            });
+//            实时监听输入框的输入变化，当有输入值的时候，隐藏必须填写字段
+            $('.first_info input').bind("input propertychange change",function () {
+                var val = $(this).val();
+                if (val!=undefined&&val!='') {
+                    $(this).siblings(".reqiure_enter").hide(0);
+                }
+            });
+        } );
+    </script>
+</head>
+<body>
+<header>
+    <span class="short_nav"></span>
+    <div class="home_icon">
+        <a href="../index.html" style="text-decoration: none;color: white">C2C</a>
+    </div>
+    <input type="text" placeholder="Search" name="search" class="nav_search_input">
+    <span class="search_icon"></span>
+    <span class="user_icon"></span>
+    <!--修改为用户名-->
+    <span class="login_or_register_string">
+        <a href="login_page.html">登陆</a> ， <a href="login_page.html">注册</a>
+    </span>
+</header>
+<div class="short_nav_show">
+    <ul>
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="mall_page.html">商城</a></li>
+        <li><a href="publish_product.html">发布商品</a></li>
+        <li><a href="require_product.html">求购商品</a></li>
+        <li><a href="shopping_cart.html">我的购物车</a></li>
+        <li><a href="#">反馈与意见</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+</div>
+<nav class="my_nav">
+    <ul>
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="mall_page.html">商城</a></li>
+        <li><a href="publish_product.html">发布商品</a></li>
+        <li><a href="require_product.html">求购商品</a></li>
+        <li><a href="shopping_cart.html">我的购物车</a></li>
+        <li><a href="#">反馈与意见</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+</nav>
+<div class="top_content">
+    <div class="publish_product_div">
+        <div id="accordion">
+            <h3>用户名：<span class="username_span">123456</span></h3>
+            <div class="info_content">
+                <div class="first_info">
+                    <span>用户名：</span><input type="text" class="username_input">
+                    <span class="reqiure_enter"> 必须填写此字段</span>
+                </div>
+                <button class="update_button">确认修改</button>
+            </div>
+            <h3>真实姓名：<span class="realname_span">0.0</span></h3>
+            <div class="info_content">
+                <div class="first_info">
+                    <span>真实姓名：</span><input type="text" class="realname_input">
+                    <span class="reqiure_enter"> 必须填写此字段</span>
+                </div>
+                <button class="update_button">确认修改</button>
+            </div>
+            <h3>性别：<span class="sex_span">男</span></h3>
+            <div class="info_content">
+                <div class="first_info sex_info">
+                    <span>性别：</span><input type="radio" name="sex_choose" value="1" checked>男
+                    <input type="radio" name="sex_choose" value="2">女
+                </div>
+                <button class="update_button">确认修改</button>
+            </div>
+            <h3>学号：<span class="sno_span">201421314227</span></h3>
+            <div class="info_content">
+                <div class="first_info">
+                    <span>学号：</span><input type="text" class="username_input">
+                    <span class="reqiure_enter"> 必须填写此字段</span>
+                </div>
+                <button class="update_button">确认修改</button>
+            </div>
+            <h3>宿舍号：<span class="dormitory_span">9407</span></h3>
+            <div class="info_content">
+                <div class="first_info">
+                    <span>宿舍号：</span><input type="text" class="username_input">
+                    <span class="reqiure_enter"> 必须填写此字段</span>
+                </div>
+                <button class="update_button">确认修改</button>
+            </div>
+            <h3>Email：<span class="email_span">425746853@qq.com</span></h3>
+            <div class="info_content">
+                <div class="first_info">
+                    <span>Email：</span><input type="text" class="username_input">
+                    <span class="reqiure_enter"> 必须填写此字段</span>
+                </div>
+                <button class="update_button">确认修改</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2014.Company name All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
