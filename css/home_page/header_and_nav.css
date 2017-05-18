@@ -149,7 +149,7 @@ nav.my_nav ul li:last-child {
 }
 .short_nav_show {
     width: 10%;
-    height: 41%;
+    height: 39%;
     position: fixed;
     border-radius: 10px;
     z-index: 30;
