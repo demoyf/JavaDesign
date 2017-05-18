@@ -5,9 +5,10 @@ header {
     box-shadow: 5px 5px 10px #888888;
     position: fixed;
     margin-top: -10px;
-    display: inline;
+    display: block;
     z-index: 30;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 span.short_nav {
@@ -50,8 +51,11 @@ header .login_or_register_string {
     font-weight: 100;
     margin-top: 0.5%;
     font-family: cursive;
+    width: 6em;
+    height: 0.55em;
+    display: inline;
     overflow: hidden;
-    height: 1em;
+    text-overflow: ellipsis;
 }
 
 .login_or_register_string a {
