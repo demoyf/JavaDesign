@@ -192,3 +192,44 @@ nav.my_nav ul li:last-child {
     cursor: pointer;
     background-color: slateblue;
 }
+/*111*/
+.personal_nav {
+    position: fixed;
+    margin-left: 85%;
+    width: 10%;
+    height: 18%;
+    border-radius: 10px;
+    z-index: 30;
+    background-color: white;
+    margin-top: 3.8%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.personal_nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 10%;
+}
+.personal_nav ul li {
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.personal_nav ul li:last-child {
+    border-bottom: none;
+}
+.personal_nav ul li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 1em;
+}
+.personal_nav ul li:hover {
+    cursor: pointer;
+    background-color: slateblue;
+}

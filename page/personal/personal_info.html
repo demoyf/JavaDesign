@@ -15,16 +15,17 @@
             $( "#accordion" ).accordion();
             $('.update_button').click(function () {
                 var type = $(this).siblings(".first_info").children("input").attr("type");
+                var className = $(this).siblings(".first_info").children("input").attr("class");
                 if (type=="radio") {
 //                    单选按钮
-
+                    alert(className);
                 }else {
                     var val = $(this).siblings(".first_info").children("input").val();
                     if (val==undefined||val=='') {
                         $(this).siblings(".first_info").children(".reqiure_enter").show(0);
                     }else{
 //                        修改，修改类名或id，直接获取类名就可以
-
+                        alert(className);
                     }
                 }
             });
@@ -80,7 +81,7 @@
             <h3>用户名：<span class="username_span">123456</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>用户名：</span><input type="text" class="username_input">
+                    <span>用户名：</span><input type="text" class="username">
                     <span class="reqiure_enter"> 必须填写此字段</span>
                 </div>
                 <button class="update_button">确认修改</button>
@@ -88,7 +89,7 @@
             <h3>真实姓名：<span class="realname_span">0.0</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>真实姓名：</span><input type="text" class="realname_input">
+                    <span>真实姓名：</span><input type="text" class="realName">
                     <span class="reqiure_enter"> 必须填写此字段</span>
                 </div>
                 <button class="update_button">确认修改</button>
@@ -96,15 +97,15 @@
             <h3>性别：<span class="sex_span">男</span></h3>
             <div class="info_content">
                 <div class="first_info sex_info">
-                    <span>性别：</span><input type="radio" name="sex_choose" value="1" checked>男
-                    <input type="radio" name="sex_choose" value="2">女
+                    <span>性别：</span><input class="gender" type="radio" name="gender" value="1" checked>男
+                    <input class="gender" type="radio" name="gender" value="2">女
                 </div>
                 <button class="update_button">确认修改</button>
             </div>
             <h3>学号：<span class="sno_span">201421314227</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>学号：</span><input type="text" class="username_input">
+                    <span>学号：</span><input type="text" class="sno">
                     <span class="reqiure_enter"> 必须填写此字段</span>
                 </div>
                 <button class="update_button">确认修改</button>
@@ -112,7 +113,7 @@
             <h3>宿舍号：<span class="dormitory_span">9407</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>宿舍号：</span><input type="text" class="username_input">
+                    <span>宿舍号：</span><input type="text" class="dormitory">
                     <span class="reqiure_enter"> 必须填写此字段</span>
                 </div>
                 <button class="update_button">确认修改</button>
@@ -120,7 +121,7 @@
             <h3>Email：<span class="email_span">425746853@qq.com</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>Email：</span><input type="text" class="username_input">
+                    <span>Email：</span><input type="text" class="email">
                     <span class="reqiure_enter"> 必须填写此字段</span>
                 </div>
                 <button class="update_button">确认修改</button>
