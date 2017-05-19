@@ -21,9 +21,7 @@ div.detail_product {
     padding: 2%;
     text-align: center;
     line-height: 3em;
-    z-index: 1000;
 }
-
 .detail_product .detail_product_name {
     color: rgba(0, 0, 0, 0.62);
     font-size: 1em;
@@ -85,7 +83,27 @@ div.pagination_div {
     cursor: pointer;
     background-color: slateblue;
 }
-
+.product_content_div .detail_product .delete_and_update {
+    width: 100%;
+    display: block;
+    padding-bottom: 0%;
+    position: relative;
+    text-align: inherit;
+}
+.product_content_div .detail_product .delete_and_update img.update_publish {
+    width: 8%;
+    padding-bottom: 0;
+    position: relative;
+    margin-right: 30%;
+}
+.product_content_div .detail_product .delete_and_update img.delete_publish {
+    width: 8%;
+    padding-bottom: 0;
+    margin-left: 30%;
+}
+.product_content_div .detail_product .delete_and_update img:hover {
+    cursor: pointer;
+}
 footer {
     width: 96%;
     background-color: slateblue;

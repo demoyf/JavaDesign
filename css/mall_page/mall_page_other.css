@@ -103,7 +103,6 @@ div.detail_product {
     padding: 2%;
     text-align: center;
     line-height: 3em;
-    z-index: 1000;
 }
 
 .detail_product .detail_product_name {
