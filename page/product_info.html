@@ -10,6 +10,10 @@
     <script>
         $(function () {
             $('.send_comment_button').click(function () {
+                var value = $('.comment_textarea').val();
+
+            });
+            $('.buy_button').click(function () {
 
             });
         });
@@ -49,7 +53,7 @@
             width: 100%;
         }
         .product_info_div {
-            width: 60%;
+            width: 40%;
             display: block;
             float: left;
             margin-left: 5%;
@@ -110,9 +114,20 @@
             color: rgba(0,0,0,0.62);
         }
         .one_comment .content {
-            font-size: 1.2em;
+            font-size: 1.3em;
             text-indent: 2em;
             color: rgba(0,0,0,0.62);
+        }
+        .buy_button {
+            width: 40%;
+            padding: 0.3em;
+            font-size: 1.5em;
+            background-color: slateblue;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            margin-top: 5em;
+            margin-left: 15%;
         }
         footer {
             width: 96%;
@@ -193,6 +208,7 @@
             <span class="info_content">这是一个商品，联系电话1111111111</span><br/>
             <span class="what_info">分类：</span>
             <span class="info_content">数码科技-手机-苹果</span><br/>
+            <button class="buy_button">加入购物车</button>
         </div>
         <div class="publish_comment">
             <span>留言：</span><br/><br/>
