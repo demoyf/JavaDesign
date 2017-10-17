@@ -66,14 +66,14 @@ $(function () {
             } else {
                 $('.short_nav_show').show(0).css({opacity: 0, height: 0}).animate({
                     opacity: 1,
-                    height: "41%"
+                    height: "43%"
                 }, 500).show(0);
             }
         }
     });
         $('.user_name_a').mouseenter(function () {
             if (!$('.personal_nav').is(":visible")) {
-                $('.personal_nav').show(0).animate({height: '18%'},500);
+                $('.personal_nav').show(0).animate({height: '23%'},500);
             }
         });
         $('.personal_nav').mouseleave(function () {

@@ -41,9 +41,9 @@ $(function () {
     });
     $('#all').change(function () {
         if($(this).is(":checked")) {
-            $("input[name='checkbox']").attr("checked","true");
+            $("input[type='checkbox']").attr("checked","checked");
         }else {
-            $("input[name='checkbox']").removeAttr("checked");
+            $("input[type='checkbox']").removeAttr("checked");
         }
         calSum();
     });
